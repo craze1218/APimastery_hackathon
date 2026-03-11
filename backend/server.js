@@ -4,7 +4,6 @@ const express = require("express");
 const cors = require("cors");
 const neoRouter = require("./routes/neo");
 const issRouter = require("./routes/iss");
-const weatherRouter = require("./routes/weather");
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -14,7 +13,6 @@ app.use(express.json());
 
 app.use("/api/neo", neoRouter);
 app.use("/api/iss", issRouter);
-app.use("/api/space-weather", weatherRouter);
 
 app.get("/", (_req, res) => {
   res.json({ message: "Space Data Explorer API" });
